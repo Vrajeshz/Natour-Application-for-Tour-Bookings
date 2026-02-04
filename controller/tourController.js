@@ -38,7 +38,7 @@ exports.resizeTourImages = catchAsync(async (req, res, next) => {
     .jpeg({ quality: 90 })
     .toFile(`public/img/tours/${req.body.imageCover}`);
 
-  // 2) Images 
+  // 2) Images
   req.body.images = [];
   await Promise.all(
     req.files.images.map(async (file, i) => {
